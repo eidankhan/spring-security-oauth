@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: spring-security-oauth
+
+logging:
+  level:
+    root: INFO
+  pattern:
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss}){faint} %highlight(%5p) %clr([%t]){green} %clr(%c){cyan} - %m%n%wEx"
+
