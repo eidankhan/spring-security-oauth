@@ -1,10 +1,22 @@
 spring:
   application:
-    name: spring-security-oauth
-
+    name: spring-security-oauth  
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENT_ID}   # Placeholder for Google Client ID
+            client-secret: ${GOOGLE_CLIENT_SECRET}  # Placeholder for Google Client Secret
+            redirect-uri: "{baseUrl}/login/oauth2/code/google"
+            scope: profile, email
+        provider:
+          google:
+            authorization-uri: ${GOOGLE_AUTHORIZATION_URI}
+            token-uri: ${GOOGLE_TOKEN_URI}
+            user-info-uri: ${GOOGLE_USER_INFO_URI}
 logging:
   level:
     root: INFO
   pattern:
-    console: "%clr(%d{yyyy-MM-dd HH:mm:ss}){faint} %highlight(%5p) %clr([%t]){green} %clr(%c){cyan} - %m%n%wEx"
-
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss}){faint} %clr(%5p) %clr([%t]){green} %clr(%c){cyan} - %m%n%wEx"

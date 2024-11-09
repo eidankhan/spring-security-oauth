@@ -32,4 +32,8 @@ build/
 ### VS Code ###
 .vscode/
 
-/resources/application.yml
+# Ignore application.yml to protect sensitive data
+# src/main/resources/application.yml
+
+# Ignore .env file to protect environment variables
+.env
